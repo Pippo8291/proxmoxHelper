@@ -103,6 +103,8 @@ echo "/usr/sbin/lightdm" > /etc/X11/default-display-manager
 msg_ok "Installed lightdm"
 
 msg_info "Installing kodi"
+apt install software-properties-common &>/dev/null
+add-apt-repository -y ppa:team-xbmc/ppa &>/dev/null
 apt-get update &>/dev/null
 apt-get install -y kodi &>/dev/null
 set +e
