@@ -233,7 +233,7 @@ export PCT_OPTIONS="
   -unprivileged $CT_TYPE
   $PW
 "
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/ubuntu.sh)" || exit
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/create_lxc.sh)" || exit
 
 msg_info "Pre-starting LXC Container"
 pct start $CTID
@@ -246,7 +246,7 @@ INPUT_GID=$(pct exec ${CTID} getent group input | cut -d: -f3)
 AUDIO_GID=$(pct exec ${CTID} getent group audio | cut -d: -f3)
 
 msg_info "Stopping LXC Container"
-#pct stop $CTID
+pct stop $CTID
 msg_ok "Stopped LXC Container"
 
 LXC_CONFIG=/etc/pve/lxc/${CTID}.conf
