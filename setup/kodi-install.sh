@@ -104,7 +104,8 @@ msg_ok "Installed lightdm"
 
 msg_info "Installing kodi"
 apt install software-properties-common &>/dev/null
-add-apt-repository -y ppa:team-xbmc/xbmc-nightly &>/dev/null
+#add-apt-repository -y ppa:team-xbmc/xbmc-nightly &>/dev/null
+add-apt-repository ppa:ubuntuhandbook1/kodi &>/dev/null
 apt-get update &>/dev/null
 apt-get install -y kodi &>/dev/null
 set +e
